@@ -17,15 +17,40 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" defer="defer" src="primes.js"></script>
+
+    <style>
+
+      body {
+        background-color: #fce4ec
+      }
+
+      .table-striped tbody tr:nth-of-type(odd) {
+        background-color:#fff8e1
+      }
+
+      
+
+
+
+    </style>
   </head>
 
   <body>
-    <div id="warnings"></div>
-    <h1 id="greeting"></h1>
+    <div class="row justify-content-center">
+    <div class="col-md-8">
+    <div id="warnings" class="alert alert-warning"></div>
+    <h1 id="greeting" class="display-4"></h1>
     <p id="numberInfo" class="alert alert-info"></p>
     <table id="nPrimes" class="table table-striped">
-      <thead></thead>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Table of Prime Numbers</th>
+        </tr>
+      </thead>
       <tbody></tbody>
     </table>
+    </div>
+    </div>
   </body>
 </html>
