@@ -1,0 +1,74 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:#DC8C8C;
+    text-align: center;
+  }
+  
+  .container {
+    background-color:#E65A76;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    color:#000000;
+  }
+  
+  
+  #result {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 9px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  
+  
+  #btnSum, #btnSub, #btnMul, #btnDiv, #btnEql {
+    background-color: #f7ce5b;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  #btnClr {
+    background-color: #ff6347;
+    color: #fff;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 80%;
+    }
+  
+    button {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+  
+    #result {
+      font-size: 18px;
+    }
+  }
+  

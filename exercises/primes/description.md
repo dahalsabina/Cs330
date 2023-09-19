@@ -69,7 +69,7 @@ http://localhost:8000/primes.html
 
 ## Testing
 
-Requires `pytest` and `playwright`.
+Requires `pytest` and `playwright`
 
 Run the following:
 
