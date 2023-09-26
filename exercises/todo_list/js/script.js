@@ -12,10 +12,31 @@ var priority = ["Low", "Normal", "Important", "Critical"];
  */
 function addTask() {
     // TODO: Implement this function
+
     let vals = [];
     let rowcolids = ["title", "assignedTo", "priority", "dueDate"];
+    let formIsValid = true;
 
-    addRow(vals, document.getElementById("taskList"));
+   for (let colId of rowcolids) {
+        const value = document.getElementById(colId).value;
+        if (value.trim() === "") {
+            alert("All fields must be filled out.");
+            formIsValid = false;
+            break;
+        }
+        vals.push(value);
+    }
+    if (formIsValid) {
+
+     addRow(vals, document.getElementById("taskList"));
+     const feedbackContainer = document.getElementById("feedbackMessage");
+     feedbackContainer.style.display = "none";
+    }else {
+      
+        document.getElementById("feedbackMessage").textContent = "Fill out title and due date";
+        feedbackMessage.style.display = "block";
+        
+    }
 }
 
 /**
@@ -26,9 +47,29 @@ function addTask() {
  */
 function addRow(valueList, parent) {
     // TODO: Implement this function
+    
     let row = document.createElement("tr");
-    let td = document.createElement("td");
     let cb = document.createElement("input");
+    cb.type = "checkbox";
+    row.appendChild(cb);
+
+    cb.addEventListener("change", function() {
+        if (cb.checked) {
+            removeRow(cb);
+        }
+    });
+
+    for (let value of valueList) {
+        let td = document.createElement("td");
+        td.textContent = value;
+        row.appendChild(td);
+    }
+    
+       
+    let priority = valueList[2].toLowerCase(); 
+    row.classList.add(priority);
+
+
 
     parent.appendChild(row);
 }
@@ -38,15 +79,26 @@ function addRow(valueList, parent) {
  * 
  * https://stackoverflow.com/questions/26512386/remove-current-row-tr-when-checkbox-is-checked
  */
-function removeRow() {
+function removeRow(checkbox) {
     // TODO: Implement this function
-}
+
+    const row = checkbox.closest("tr");
+
+    if (row) {
+        setTimeout(() => {
+            row.parentElement.removeChild(row);
+        }, 1000);     }
+    }
 
 /**
  * Remove all table rows
  * 
  */
 function selectAll() {
+
+    
+    //Didn't work as I wanted so removed the whole code
+
 
 }
 
@@ -58,10 +110,25 @@ function selectAll() {
  */
 function populateSelect(selectId, sList) {
     // TODO: Implement this function
-    let sel = document.getElementById(selectId, sList);
+
+    let sel = document.getElementById(selectId,sList)
+    sel.innerHTML = "";
+
+   
+    for (let option of sList) {
+        let opt = document.createElement("option");
+        opt.value = option;
+        opt.textContent = option;
+        sel.appendChild(opt);
+    }
 }
 
 window.onload = function () {
     populateSelect("assignedTo", team);
     populateSelect("priority", priority);
+    
+    
+
+    
+
 };
