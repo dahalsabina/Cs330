@@ -121,6 +121,7 @@ function populateSelect(selectId, sList) {
         opt.textContent = option;
         sel.appendChild(opt);
     }
+    
 }
 
 window.onload = function () {

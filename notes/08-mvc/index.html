@@ -3,36 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resturant Menu</title>
+    <title>Shoe inventory</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
-      
     />
-    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Resturant Menu</h1>
-      <form id="food_details">
+      <form id="shoe_details">
         <div class="row">
           <div class="col-sm-4 form-group">
-            <label for="sel_item">Item</label>
-            <select name="item" class="form-control" id="sel_item">
+            <label for="sel_brand">Brand</label>
+            <select name="brand" class="form-control" id="sel_brand">
               <!-- Will populate later -->
             </select>
           </div>
           <div class="col-sm-4 form-group">
-            <label for="num_quantity">Quantity</label>
+            <label for="num_size">Size</label>
             <input
-              name="quantity"
+              name="size"
               class="form-control"
-              id="num_quantity"
+              id="num_size"
               type="number"
               min="1"
-              max="10"
+              max="50"
               required
             />
           </div>
@@ -43,60 +40,43 @@
               class="form-control"
               id="num_price"
               type="number"
-              min="5"
-              step="5.00"
+              min="0"
+              step="0.01"
               required
             />
           </div>
-          <div class="col-sm-4 form-group">
-            <label for="sel_spice">Spice</label>
-            <select name="spice" class="form-control" id="sel_spice">
-              <!-- Will populate later -->
-            </select>
-          </div>
-          
         </div>
       </form>
       <div class="row text-center">
         <div class="col d-grid gap-2 d-md-block">
           <button
             type="button"
-            onclick="if (document.getElementById('food_details').checkValidity()) {addItem()}"
+            onclick="if (document.getElementById('shoe_details').checkValidity()) {addPair()}"
             class="btn btn-primary"
           >
-            Add Item
+            Add new pair
           </button>
-          
+          <button type="button" onclick="clearAll()" class="btn btn-danger">Remove all</button>
         </div>
       </div>
     </div>
     <div class="container">
-      <table class="table table-striped" id="tbl_footlocket">
-        <h2>Serve Yourself!!</h2>
+      <table class="table" id="tbl_footlocket">
         <thead>
-          <tr id ="mytable">
-            <td><input type="checkbox" name="toggleCheckbox" class="toggleCheckbox">
-          <th>Item</th>
-          <th>Quantity</th>
+          <th>Brand</th>
+          <th>Size</th>
           <th>Price</th>
-          <th>Spice</th>
-          </td>
-          </tr>
-
         </thead>
-        <tbody id = "tableRow"></tbody>
+        <tbody></tbody>
       </table>
-      <button type="button" onclick="clearAll()" class="btn btn-danger">Remove all</button>
-      <button type="button" onclick="saveList()" class="btn btn-success">Save</button>
-
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="js/model.js"></script>
-    <script src="js/view.js"></script>
-    <script src="js/controller.js"></script>
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+    <script src="controller.js"></script>
   </body>
 </html>
