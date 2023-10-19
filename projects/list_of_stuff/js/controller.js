@@ -37,7 +37,7 @@ function clearAll() {
 }
 
 function removeRow(row, food) {
-    let table = document.getElementById("tbl_footlocket");
+    let table = document.getElementById("mytable");
     table.deleteRow(row.rowIndex);
 
     let storedMenu = JSON.parse(localStorage.getItem('restaurantMenu')) || [];
@@ -49,9 +49,6 @@ function removeRow(row, food) {
 
     myRestaurantModel.myrestaurant = updatedMenu;
 }
-
-
-
 
 
 

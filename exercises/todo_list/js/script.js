@@ -28,7 +28,7 @@ function addTask() {
     }
     if (formIsValid) {
 
-     addRow(vals, document.getElementById("taskList"));
+     addRow(vals, document.getElementById("myTable"));
      const feedbackContainer = document.getElementById("feedbackMessage");
      feedbackContainer.style.display = "none";
     }else {
@@ -45,9 +45,9 @@ function addTask() {
  * @param {string[]} valueList list of task attributes
  * @param {Object} parent DOM node to append to
  */
-function addRow(valueList, parent) {
+function addRow(valueList, tbody) {
     // TODO: Implement this function
-    
+   let tbody=document.getElementById("myTable");
     let row = document.createElement("tr");
     let cb = document.createElement("input");
     cb.type = "checkbox";
@@ -72,6 +72,8 @@ function addRow(valueList, parent) {
 
 
     parent.appendChild(row);
+
+    tbody.appendChild(row);
 }
 
 /**
