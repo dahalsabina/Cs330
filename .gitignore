@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/python,flask,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=python,flask,visualstudiocode
 
@@ -19,6 +18,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+.DS_Store
 develop-eggs/
 dist/
 downloads/
