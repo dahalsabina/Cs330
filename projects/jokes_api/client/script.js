@@ -1,5 +1,6 @@
 'use strict;'
-document.addEventListener("DOMContentLoaded", function() {
+
+window.onload = function()  {
  
     async function getJokes() {
         let category = document.getElementById('category').value;
@@ -51,4 +52,4 @@ document.addEventListener("DOMContentLoaded", function() {
    
     document.getElementById('getJokes').addEventListener('click', getJokes);
     document.getElementById('getJoke').addEventListener('click', getSpecificJoke);
-});
+};
