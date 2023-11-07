@@ -35,12 +35,10 @@ def send_specific_joke_Id(language, category, id):
         return jsonify({"joke": jokes[id]})
     else:
         return Response(json.dumps({'error': 'Joke not found'}), status=404, mimetype='application/json')
-    
-
-@app.route('/test')
-def test():
-    return 'Test route is working'
-
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+@app.route("/")
+def hello_world():
+    return "CS 330"
