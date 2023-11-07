@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let number = document.getElementById('number').value;
         let jokesArea = document.getElementById('jokesArea');
 
-        let apiUrl = `http://127.0.0.1:5000/api/v1/jokes?category=${category}&language=${language}&number=${number}`;
+        let apiUrl = `https://sabina2002.pythonanywhere.com/api/v1/jokes?category=${category}&language=${language}&number=${number}`;
 
         try {
             let response = await fetch(apiUrl);
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let jokeId = document.getElementById('jokeId').value;
         let jokesArea = document.getElementById('jokesArea');
 
-        let apiUrl = `http://127.0.0.1:5000/api/v1/jokes/${language}/${category}/${jokeId}`;
+        let apiUrl = `https://sabina2002.pythonanywhere.com/api/v1/jokes/${language}/${category}/${jokeId}`;
 
         try {
             let response = await fetch(apiUrl);
