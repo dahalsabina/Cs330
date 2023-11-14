@@ -1,14 +1,26 @@
 <html>
   <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   </head>
   <body>
-    <div>
-      <div>
-        <div><a href="/country">Country info</a></div>
-        <div><a href="/region">Region info</a></div>
-        <div><a href="/continent">Continent info</a></div>
+    <div class="container mt-4">
+      <h1 class="text-center mb-4">Welcome to the World Info Portal</h1>
+      <p class="text-center lead">Choose a category to get started:</p> 
+      <div class="row">
+        <div class="col text-center">
+          <a href="/country" class="btn btn-primary">Country Info</a>
+        </div>
+        <div class="col text-center">
+          <a href="/region" class="btn btn-secondary">Region Info</a>
+        </div>
+        <div class="col text-center">
+          <a href="/continent" class="btn btn-success">Continent Info</a>
+        </div>
       </div>
     </div>
-    {% block content %} {% endblock %}
+    <div  class="container mt-4">
+      {% block content %} {% endblock %}
+    </div>
   </body>
 </html>
+
