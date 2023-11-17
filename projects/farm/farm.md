@@ -30,3 +30,5 @@ There is no need to implement a formal checkout process, you can assume that the
 
 - Implement API to connect front-end and back-end of your application.
 - Only allow authenticated users to access admin interface
+
+#use csv file to efficiently store data in database than manually type
