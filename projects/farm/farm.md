@@ -22,13 +22,12 @@ There is no need to implement a formal checkout process, you can assume that the
   - see available items (or all items, with those unavailable clearly marked as such)
   - add item to the cart
   - make changes to the cart
-- Use database (SQLite or Postgresql) to store inventory
+- Use Jinja2 templates
 - HTML/CSS framework used to style the application
+- Use database (SQLite or Postgresql) to store inventory
 - Application must be deployed
 
 ## Optional features
 
 - Implement API to connect front-end and back-end of your application.
 - Only allow authenticated users to access admin interface
-
-#use csv file to efficiently store data in database than manually type

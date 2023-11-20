@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Available Products</h1>
+
+<div class="row">
+    {% for product in farm %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ url_for('static', filename='Images/' + product.image) }}" class="card-img-top" alt="Image of {{ product.name }}" style="max-height: 200px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text">${{ "%.2f"|format(product.price) }}</p>
+                {% if product.availability %}
+                    <a href="{{ url_for('add_to_cart', product_id=product.id) }}" class="btn btn-primary">Add to Cart</a>
+                {% else %}
+                    <button class="btn btn-secondary" disabled>Not Available</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

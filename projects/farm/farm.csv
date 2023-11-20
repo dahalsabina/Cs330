@@ -1,0 +1,6 @@
+﻿id,name,description,image,availability,price
+1,pork,freshly chopped,pork.png,TRUE,5
+2,chicken,raised in non-stressed environment,chicken.png,TRUE,2
+3,beef,freshly chopped,beef.png,TRUE,5
+4,turkey,fed with organic grains,turkey.jpeg,FALSE,6
+5,fish,"fresh water , healthy ",fish.jpeg,FALSE,3
