@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Simple Flask app"""
 
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for
 from models import Product, ProductSchema,db
 from flask import session
 from config import app
@@ -28,17 +28,35 @@ def admin_dashboard():
     products = Product.query.all()
     return render_template("admin_dashboard.html", products=products)
 
-
+#Purpose: add product by owner
 @app.route("/admin/add", methods=["GET", "POST"])
 def add_product():
     """Add a new product"""
     if request.method == "POST":
+        name = request.form['name']
+        description = request.form['description']
+        image = request.form['image']
+        availability = request.form['availability']
+        price = request.form['price']
+
+        # validation
+        if not name or not description or not price:
+            return "Please fill in all required fields."
+
+        try:
+            price = float(price)
+            if price <= 0:
+                return "Price must be a positive number."
+        except ValueError:
+            return "Invalid price format."
+
+        # Create and add the new product to the database
         new_product = Product(
-            name=request.form['name'],
-            description=request.form['description'],
-            image=request.form['image'],
-            availability=request.form['availability'] == 'true',
-            price=float(request.form['price'])
+            name=name,
+            description=description,
+            image=image,
+            availability=availability == 'true',
+            price=price
         )
         db.session.add(new_product)
         db.session.commit()
@@ -49,20 +67,41 @@ def add_product():
 
 
 
+#Purpose: edit product by owner
 @app.route("/admin/edit/<int:product_id>", methods=["GET", "POST"])
 def edit_product(product_id):
     """Edit an existing product"""
     product = Product.query.get_or_404(product_id)
     if request.method == "POST":
-        product.name = request.form['name']
-        product.description = request.form['description']
-        product.image = request.form['image']
-        product.availability = request.form['availability'] == 'true'
-        product.price = float(request.form['price'])
+        name = request.form['name']
+        description = request.form['description']
+        image = request.form['image']
+        availability = request.form['availability']
+        price = request.form['price']
+
+        # validation
+        if not name or not description or not price:
+            return "Please fill in all required fields."
+
+        try:
+            price = float(price)
+            if price <= 0:
+                return "Price must be a positive number."
+        except ValueError:
+            return "Invalid price format."
+
+        # Update the product with the new data
+        product.name = name
+        product.description = description
+        product.image = image
+        product.availability = availability == 'true'
+        product.price = price
+
         db.session.commit()
         return redirect(url_for('admin_dashboard'))
 
     return render_template("edit_product.html", product=product)
+
 
 
 #Purpose: Function to let owner delete the product which they don't want to show
@@ -75,21 +114,10 @@ def delete_product(product_id):
     return redirect(url_for('admin_dashboard')) #remains in the admin_dashboard.html
 
 
-# @app.route("/api/products")
-# def api_get_products():
-#     products = Product.query.all()
-#     product_schema = ProductSchema(many=True)
-#     return jsonify(product_schema.dump(products))
-
-
-
-
 
 
 
 #Code Related to Cart manipulation by Customers
-#https://stackoverflow.com/questions/58331469/adding-items-to-shopping-cart-python-flask
-
 #Purpose: This function is use to add prouduct into the cart by the customers
 @app.route("/add_to_cart/<int:product_id>")
 def add_to_cart(product_id):
