@@ -11,7 +11,7 @@ import os
 
 
 app.secret_key = os.getenv('FLASK_SECRET_KEY', 'default_secret_key')
-app.config['UPLOAD_FOLDER'] = 'static/Images'
+app.config['UPLOAD_FOLDER'] = 'static/Images' #this is different in pythonanywhere to configure correct path for static files 
 
 
 

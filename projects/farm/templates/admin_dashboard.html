@@ -16,7 +16,7 @@
 
         <p class="card-text">${{ "%.2f"|format(product.price) }}</p>
 
-        <p class="card-text">{{ 'Yes' if product.availability else 'No' }}</p>
+        <p class="card-text">{{ 'Available' if product.availability else 'Not Available' }}</p>
 
         <a href="{{ url_for('edit_product', product_id=product.id) }}" class="btn btn-secondary btn-sm">Edit</a>
 
