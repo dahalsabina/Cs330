@@ -5,11 +5,14 @@ from flask import Flask, render_template, request, redirect, url_for
 from models import Product, ProductSchema,db
 from flask import session
 from config import app
+from werkzeug.utils import secure_filename
 import os
 
 
 
 app.secret_key = os.getenv('FLASK_SECRET_KEY', 'default_secret_key')
+app.config['UPLOAD_FOLDER'] = 'static/Images'
+
 
 
 @app.route("/")
@@ -31,30 +34,26 @@ def admin_dashboard():
 #Purpose: add product by owner
 @app.route("/admin/add", methods=["GET", "POST"])
 def add_product():
-    """Add a new product"""
     if request.method == "POST":
         name = request.form['name']
         description = request.form['description']
-        image = request.form['image']
         availability = request.form['availability']
         price = request.form['price']
 
-        # validation
-        if not name or not description or not price:
-            return "Please fill in all required fields."
+     
 
-        try:
-            price = float(price)
-            if price <= 0:
-                return "Price must be a positive number."
-        except ValueError:
-            return "Invalid price format."
+        if 'image' in request.files:
+            image = request.files['image']
+            if image.filename != '':
+                #  save the uploaded file to the specified directory
+                filename = secure_filename(image.filename)
+                image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-        # Create and add the new product to the database
+       
         new_product = Product(
             name=name,
             description=description,
-            image=image,
+            image=os.path.join(filename),  
             availability=availability == 'true',
             price=price
         )
@@ -63,9 +62,6 @@ def add_product():
         return redirect(url_for('admin_dashboard'))
 
     return render_template("add_product.html")
-
-
-
 
 #Purpose: edit product by owner
 @app.route("/admin/edit/<int:product_id>", methods=["GET", "POST"])
@@ -90,7 +86,7 @@ def edit_product(product_id):
         except ValueError:
             return "Invalid price format."
 
-        # Update the product with the new data
+        
         product.name = name
         product.description = description
         product.image = image
@@ -118,13 +114,14 @@ def delete_product(product_id):
 
 
 #Code Related to Cart manipulation by Customers
+ 
 #Purpose: This function is use to add prouduct into the cart by the customers
 @app.route("/add_to_cart/<int:product_id>")
 def add_to_cart(product_id):
-    if 'cart' not in session:
-        session['cart'] = {}
+    if 'cart' not in session: 
+        session['cart'] = {} 
 
-    cart = session['cart']
+    cart = session['cart'] 
     product_id = str(product_id)  
     if product_id in cart:
         cart[product_id] += 1  
@@ -142,7 +139,7 @@ def add_to_cart(product_id):
 def view_cart():
     cart_items = {}
     if 'cart' in session:
-        for product_id, quantity in session['cart'].items():
+        for product_id, quantity in session['cart'].items(): 
             product = Product.query.get(product_id)
             if product:
                 cart_items[product] = quantity
