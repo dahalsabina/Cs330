@@ -1,0 +1,9 @@
+﻿id,name,price,size,color,image,category_id
+1,T-shirt,0,S,black,"https://www.istockphoto.com/photo/young-handsome-man-isolated-on-gray-textured-wall-smiling-while-pointing-with-index-gm1093999178-293604569",1
+2,Sweater,2,L,blue,"https://www.stussy.com/products/117205-s-loose-knit-sweater-blue",4
+3,Jeans,1,M,white,"https://www.go-hiho.com/products/casual-linen-pant-white",1
+4,polo-shirt,1,XL,black,"https://www.google.com/imgres?imgurl=https%3A%2F%2Facademy.scene7.com%2Fis%2Fimage%2Facademy%2F20806158%3F%24pdp-mobile-gallery-ng%24&tbnid=8y0SFntJFsCNsM&vet=12ahUKEwjZl6fI3P2CAxXxD9AFHXE3A68QMygOegUIARCYAg..i&imgrefurl=https%3A%2F%2Fwww.academy.com%2Fp%2Fbcg-mens-coaches-polo-shirt-129381334&docid=II4NReiP07oX_M&w=660&h=660&itg=1&q=men%20polo%20shirt%20black%20download&ved=2ahUKEwjZl6fI3P2CAxXxD9AFHXE3A68QMygOegUIARCYAg",7
+5,Jacket,3,XXL,grey,"https://pngimg.com/image/8047",9
+6,suit,4,XS,black,"https://www.pngaaa.com/detail/1588759",2
+7,jersery,0,L,blue,"https://www.pinterest.com/pin/853432198167469274/",3
+8,vest,0,M,brown,"https://www.google.com/imgres?imgurl=http%3A%2F%2Fzhilifs.com%2Fcdn%2Fshop%2Fproducts%2FO1CN01feLVsA1zkT05FPi18__1057896752.jpg%3Fv%3D1656148456&tbnid=bl9f8IKUFnSkTM&vet=12ahUKEwi84fmW3v2CAxVOx8kDHfI9DW4QMygEegUIARDvAQ..i&imgrefurl=https%3A%2F%2Fzhilifs.com%2Fproducts%2Fk2d6042a&docid=-tVBDH9u6q4vGM&w=800&h=800&q=brown%20vest%20image%20men&hl=en&ved=2ahUKEwi84fmW3v2CAxVOx8kDHfI9DW4QMygEegUIARDvAQ",1
