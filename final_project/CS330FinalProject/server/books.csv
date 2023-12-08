@@ -1,0 +1,5 @@
+﻿id,title,isbn,publication_year,image,genre,status,link
+1,Computer Programming,12390001938,2020,computerScience.jpeg,text-book,0,"https://staticg.sportskeeda.com/editor/2023/05/66154-16844693458009-1920.jpg"
+2,Principles of Biology,40938546278,2021,biology.jpg,text-book,0,"https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780439064873_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B300x10000%5D&sink=format%5Bwebp%5D"
+3,Microeconomics,82763554556,2022,microeconomics.jpeg,text-book,1,"https://images.booksense.com/images/535/716/9781338716535.jpg"
+4,Accounting Dummies,11299984777,2019,accounting.jpeg,text-book,0,"https://www.peterharrington.co.uk/blog/wp-content/uploads/2022/10/HP_5-scaled-e1666611456147.jpg"

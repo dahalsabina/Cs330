@@ -1,0 +1,9 @@
+﻿id,name,price,size,color,image,category_id,status
+1,T-shirt,0,S,black,"https://www.next.us/nxtcms/resource/blob/5791600/d114a8023263017f86b11c206949508e/shackets-data.jpg",1,0
+2,Sweater,2,L,blue,"https://hips.hearstapps.com/hmg-prod/images/mh-1-4-outerwear-1641320113.png?crop=0.502xw:1.00xh;0.498xw,0&resize=640:*".jpeg,4,0
+3,Jeans,1,M,white,"https://www.petermillar.com/on/demandware.static/-/Sites-PM-Library/default/dw9bcd2b58/rich-clp/clp-men/new/images/mens-new-arrivals-m.jpg",1,0
+4,polo-shirt,1,XL,black,"https://emeraldpalate.com/wp-content/uploads/2012/07/Thrift-Store-Fresh-2.jpg",7,0
+5,Jacket,3,XXL,grey,"https://i.ebayimg.com/images/g/Z08AAOSwhdJh-J90/s-l1200.webp",9,0
+6,suit,4,XS,black,"https://menswear-market.com/wp-content/uploads/2018/02/sell-old-suits-cash-1.jpg",2,0
+7,jersery,0,L,blue,"https://gamewornauthentics.com/cdn/shop/files/IMG_0683.jpg?v=1686236213",3,0
+8,vest,0,M,brown,"https://thegreencloset.com/cdn/shop/files/92723-4.jpg?v=1696417920&width=1100",1,0

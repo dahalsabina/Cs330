@@ -1,0 +1,9 @@
+﻿id,name,price,size,color,image,category_id,status
+1,T-shirt,0,S,black,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1hwIkR7iL8jNelgl3Lm1ZBdn9TeH3UMpWWQ&usqp=CAU",1,0
+2,Dress,2,L,brown,"https://cdn.cliqueinc.com/posts/208559/cocktail-attire-for-women-208559-1689683996633-image.700x0c.jpg",4,0
+3,Jeans,1,M,white,"https://leejeans.com.au/dw/image/v2/BDFS_PRD/on/demandware.static/-/Sites-leejeans-master-catalog/default/dw5c7fbbfb/images/L_657186_/L_657186_VH0_1.jpg?sw=450&sh=600",1,0
+4,skirt,1,XL,black,"https://swapfashions.com/wp-content/uploads/2023/06/eHu5MHwHLwdaJ-jE7zQ6OO7Dhc0SYoHAFyXijsBN9Lc.jpg",5,0
+5,Jacket,3,XXL,grey,"https://www.neutralexpressionthrift.com/cdn/shop/files/IMG-3399.jpg?v=1698428192&width=1946",9,0
+6,Blazers,4,XS,black,"https://i.etsystatic.com/30279695/r/il/851a55/5330048773/il_fullxfull.5330048773_9lbe.jpg",2,0
+7,Blouse,0,L,pink,"https://www.whatwonderwomenwear.com/wp-content/uploads/2021/01/thriftflip-blouse-sleeves-1-852x1024.jpg",7,0
+8,Earings,0.5,one_size,golden,https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/04/15/gettyimages-1146873446.jpg?width=1200,8,0
